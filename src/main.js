@@ -116,6 +116,8 @@ var quotes = [
 
 var savedPosters = [];
 
+var currentPoster = new Poster(posterImg.src, posterTitle.innerText, posterQuote.innerText);
+
 formButton.addEventListener("click", showPosterForm);
 showSavedPosterButton.addEventListener("click", showSaved);
 showMainButton.addEventListener("click", takeMeBack);
@@ -124,6 +126,7 @@ randomButton.addEventListener("click", randomize);
 showMyPoster.addEventListener("click", makePosterForm);
 savePosterButton.addEventListener("click", saveThisPoster);
 savedPosterGrid.addEventListener("dblclick", deleteMiniPoster);
+window.addEventListener("load", randomize)
 
 function makePosterForm(event) {
   event.preventDefault();
@@ -217,7 +220,3 @@ function deleteMiniPoster(event) {
   }
   closestElement.remove();
 }
-
-randomize();
-
-var currentPoster = new Poster(posterImg.src, posterTitle.innerText, posterQuote.innerText);
